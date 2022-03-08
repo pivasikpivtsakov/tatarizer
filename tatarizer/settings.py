@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import environ
-import dj_database_url
-from django.conf.global_settings import DATABASES
+import django_heroku
 
 env = environ.Env()
 env.read_env()
@@ -24,9 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-sio+ll766xtvcbz(eb9+59$pen!s)o#c^(&_hbdgmv4jalv^#+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('ISDEBUG')
@@ -83,12 +79,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tatarizer.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -126,12 +116,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
