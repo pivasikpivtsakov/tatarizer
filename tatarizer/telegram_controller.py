@@ -1,7 +1,7 @@
-from rest_framework import viewsets
+from rest_framework.views import APIView
 
 
-class TelegramController(viewsets.ViewSet):
+class TelegramController(APIView):
     def post(self):
         return 'ok'
 

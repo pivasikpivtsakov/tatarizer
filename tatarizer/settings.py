@@ -28,14 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('ISDEBUG')
 HOSTNAME = env('HOSTNAME')
+TGBOTAPI_TOKEN = env('TGBOTAPI_TOKEN')
 
 if not DEBUG:
     ALLOWED_HOSTS = [
         HOSTNAME,
     ]
-
-TGBOTAPI_TOKEN = env('TGBOTAPI_TOKEN')
-
 
 # Application definition
 
