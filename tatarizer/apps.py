@@ -11,4 +11,4 @@ class TatarizerAppConfig(AppConfig):
     # startup hook
     def ready(self):
         response = http.post(TGURL_SETWEBHOOK, data={'url': API_ROOT})
-        response.json()
+        print('setWebhook result: ', response.json())
