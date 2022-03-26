@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from tatarizer import settings
+from tatarizer.telegram_controller import TelegramController
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(f'{settings.TGBOTAPI_TOKEN}/', TelegramController.as_view()),
 ]
