@@ -1,1 +1,1 @@
-web: uvicorn tatarizer.asgi
+web: uvicorn tatarizer.asgi:application --host 0.0.0.0 --port $PORT
