@@ -1,1 +1,1 @@
-web: gunicorn tatarizer.wsgi
+web: uvicorn tatarizer.asgi

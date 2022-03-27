@@ -1,6 +1,7 @@
 # Telegram api urls
 # https://api.telegram.org/bot<token>/METHOD_NAME
-import settings
+from django.conf import settings
+
 
 TGBOTAPIURL = f'https://api.telegram.org/bot{settings.TGBOTAPI_TOKEN}'
 

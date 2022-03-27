@@ -14,12 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from tatarizer import settings
-from tatarizer.telegram_controller import TelegramController
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(f'{settings.TGBOTAPI_TOKEN}/', TelegramController.as_view()),
+    path('', include('tg_main.urls')),
 ]

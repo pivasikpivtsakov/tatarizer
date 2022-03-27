@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 
 
-class TelegramController(APIView):
+class TelegramWebhook(APIView):
     def post(self, request):
         print(request.data)
 
