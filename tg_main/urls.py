@@ -4,5 +4,5 @@ from .views.telegram import TelegramWebhook
 
 
 urlpatterns = [
-    path(f'{settings.TGBOTAPI_TOKEN}/', TelegramWebhook.as_view()),
+    path(f'{settings.TGBOTAPI_TOKEN}', TelegramWebhook.as_view()),
 ]
