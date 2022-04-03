@@ -3,11 +3,11 @@
 from django.conf import settings
 
 
-TGBOTAPIURL = f'https://api.telegram.org/bot{settings.TGBOTAPI_TOKEN}/'
+TGBOTAPIURL = f'https://api.telegram.org/bot{settings.TGBOTAPI_TOKEN}'
 
 
-TGURL_SETWEBHOOK = f'{TGBOTAPIURL}setWebhook/'
-TGURL_ANSWERINLINEQUERY = f'{TGBOTAPIURL}answerInlineQuery/'
+TGURL_SETWEBHOOK = f'{TGBOTAPIURL}/setWebhook'
+TGURL_ANSWERINLINEQUERY = f'{TGBOTAPIURL}/answerInlineQuery'
 
 # secure root of our api
 API_ROOT = f'{settings.HOSTNAME}/{settings.TGBOTAPI_TOKEN}'
