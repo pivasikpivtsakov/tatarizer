@@ -7,11 +7,11 @@ from tg_main.telegram_urls import TGURL_ANSWERINLINEQUERY
 
 
 class TelegramWebhook(APIView):
-    async def post(self, request):
+    def post(self, request):
         print('request: ')
         print(request.data)
-        async with http.AsyncClient() as client:
-            response = await client.post(TGURL_ANSWERINLINEQUERY, data={
+        with http.Client() as client:
+            response = client.post(TGURL_ANSWERINLINEQUERY, data={
                 "results": [
                     {
                         "type": "article",
