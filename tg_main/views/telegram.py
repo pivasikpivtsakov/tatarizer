@@ -11,7 +11,7 @@ class TelegramWebhook(APIView):
         print('request: ')
         print(request.data)
         with http.Client() as client:
-            response = client.post(TGURL_ANSWERINLINEQUERY, data={
+            response = client.post(TGURL_ANSWERINLINEQUERY, json={
                 "results": [
                     {
                         "type": "article",
@@ -23,6 +23,7 @@ class TelegramWebhook(APIView):
                 ]
             }
                                          )
+            print('response: ')
             print(response.json())
         return Response('ok', status=status.HTTP_200_OK)
 
